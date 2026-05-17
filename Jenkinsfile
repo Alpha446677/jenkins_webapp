@@ -5,8 +5,8 @@ pipeline {
         APP_SERVER = "172.31.38.77"
         DEPLOY_DIR = "/var/www/html"
     }
-    stages{
-        stage('Pre Build Actions') {
+   stages{
+      stage('Pre Build Actions') {
             steps{
                 sh 'npm install'            
             }
@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('Post Build Actions') {
-            steps {
+          steps {
                 sh """
                 echo 'Cleaning old files on app server'
                 ssh jenkins@${APP_SERVER} 'rm -rf ${DEPLOY_DIR}/*'
