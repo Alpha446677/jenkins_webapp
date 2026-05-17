@@ -23,7 +23,7 @@ pipeline {
                 ssh jenkins@${APP_SERVER} 'rm -rf ${DEPLOY_DIR}/*'
                 echo 'Copying frontend build'
                 scp -r dist/* jenkins@${APP_SERVER}:${DEPLOY_DIR}/
-                echo "Restarting nginx'
+                echo 'Restarting nginx'
                 ssh jenkins@${APP_SERVER} 'sudo systemctl restart nginx'
                 """
             }
