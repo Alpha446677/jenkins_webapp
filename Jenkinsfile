@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh """
                 echo 'Cleaning old files on app server'
-                ssh jenkins@${APP_SERVER} 'sudo rm -rf ${DEPLOY_DIR}/*'
+                ssh jenkins@${APP_SERVER} 'rm -rf ${DEPLOY_DIR}/*'
                 echo 'Copying frontend build'
                 scp -r dist/* jenkins@${APP_SERVER}:${DEPLOY_DIR}/
                 echo "Restarting nginx'
