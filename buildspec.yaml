@@ -9,14 +9,14 @@ phases:
       - npm install
   build:
     commands:
-      - echo build started on 'date'
+      - echo Build started on 'date'
       - echo Building the Node.js application...
-      - npm run build
-  post_build:
+      - npm run build 
+  post_build: 
     commands:
       - echo Build completed on 'date'
 
 artifacts:
-  files:
+  files: 
     - '**/*'
   base-directory: 'dist'
